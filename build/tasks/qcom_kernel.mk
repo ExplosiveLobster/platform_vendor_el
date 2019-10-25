@@ -63,6 +63,12 @@ else
 endif
 
 #----------------------------------------------------------------------
+# Create Kernel symlink
+#----------------------------------------------------------------------
+$(shell rm -fr $(shell pwd)/kernel/msm-$(TARGET_KERNEL_VERSION))
+$(shell ln -s $(shell pwd)/$(TARGET_KERNEL_SOURCE) $(shell pwd)/kernel/msm-$(TARGET_KERNEL_VERSION))
+
+#----------------------------------------------------------------------
 # Compile Linux Kernel
 #----------------------------------------------------------------------
 include $(TARGET_KERNEL_SOURCE)/AndroidKernel.mk
