@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 #----------------------------------------------------------------------
 # Host compiler configs
 #----------------------------------------------------------------------
@@ -75,3 +76,5 @@ $(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 ifneq (, $(wildcard $(shell pwd)/prebuilts/build-tools/linux-x86/bin/make))
     MAKE := $(shell pwd)/prebuilts/build-tools/linux-x86/bin/$(MAKE)
 endif
+
+endif # TARGET_COMPILE_WITH_MSM_KERNEL
