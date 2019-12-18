@@ -76,11 +76,4 @@ include $(TARGET_KERNEL_SOURCE)/AndroidKernel.mk
 $(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 	$(transform-prebuilt-to-target)
 
-#----------------------------------------------------------------------
-# Override default make with prebuilt make path (if any)
-#----------------------------------------------------------------------
-ifneq (, $(wildcard $(shell pwd)/prebuilts/build-tools/linux-x86/bin/make))
-    MAKE := $(shell pwd)/prebuilts/build-tools/linux-x86/bin/$(MAKE)
-endif
-
 endif # TARGET_COMPILE_WITH_MSM_KERNEL
