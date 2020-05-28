@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# If the kernel_definitions.mk is not found, fallback to the
+# current kernel build instruction.
+ifneq ($(wildcard device/qcom/kernelscripts/kernel_definitions.mk),)
+TARGET_KERNEL_PATH := device/qcom/kernelscripts/kernel_definitions.mk
+else
+
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 #----------------------------------------------------------------------
 # Host compiler configs
@@ -77,3 +83,4 @@ $(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 	$(transform-prebuilt-to-target)
 
 endif # TARGET_COMPILE_WITH_MSM_KERNEL
+endif # kernel_definitions.mk wildcard
