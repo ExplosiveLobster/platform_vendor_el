@@ -1,4 +1,4 @@
-# Copyright (C) 2019-2020 Pavel Dubrova <pashadubrova@gmail.com>
+# Copyright (C) 2019-2021 Pavel Dubrova <pashadubrova@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ $(shell rm -fr $(shell pwd)/kernel/msm-$(TARGET_KERNEL_VERSION))
 $(shell ln -s $(shell pwd)/$(TARGET_KERNEL_SOURCE) $(shell pwd)/kernel/msm-$(TARGET_KERNEL_VERSION))
 
 ifneq ($(wildcard device/qcom/kernelscripts/kernel_definitions.mk),)
-    include $(device/qcom/kernelscripts/kernel_definitions.mk)
+    include device/qcom/kernelscripts/kernel_definitions.mk
 else
     $(error Kernel scripts not found, cannot build kernel)
 endif
