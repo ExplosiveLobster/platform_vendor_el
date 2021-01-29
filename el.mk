@@ -18,3 +18,6 @@ PRODUCT_PACKAGES += \
     SnapdragonCamera \
     SnapdragonGallery \
     SnapdragonMusic
+
+# Include additional build utilities
+include vendor/el/build/utils.mk
