@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Offline charger
+PRODUCT_COPY_FILES += \
+    vendor/el/charger/res/animation.txt:$(TARGET_COPY_OUT_PRODUCT)/etc/res/values/charger/animation.txt \
+    vendor/el/charger/res/battery_fail.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/battery_fail.png \
+    vendor/el/charger/res/battery_scale.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/battery_scale.png \
+    vendor/el/charger/res/main_font.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/main_font.png \
+
 # Extra packages
 PRODUCT_PACKAGES += \
     ExactCalculator \
